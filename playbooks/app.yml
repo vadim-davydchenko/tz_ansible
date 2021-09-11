@@ -1,0 +1,5 @@
+- name: Config deploy all tasks
+  hosts: Test
+  become: true
+  roles:
+    - deploy_app

@@ -1,0 +1,10 @@
+network_name: example
+first_name_container: grafana
+first_name_container_image: grafana
+first_name_container_version: grafana
+first_container_ports: 3000
+second_name_container: nginx
+second_name_container_image: nginx
+second_name_container_version: stable
+second_container_ports: 80
+ansible_python_interpreter: /bin/python3

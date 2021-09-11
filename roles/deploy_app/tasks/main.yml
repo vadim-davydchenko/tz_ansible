@@ -1,0 +1,47 @@
+---
+ - name: Install package python3-docker
+   apt:
+     name: python3-docker
+     update-cache: yes
+
+ - name: Create a network
+   docker_network:
+     name: "{{ network_name }}"
+     driver: bridge
+
+ - name: Create Container Grafana
+   docker_container:
+     name: "{{ first_name_container }}"
+     image: "{{ first_name_container_image }}/{{ first_name_container_version }}"
+     state: started
+     detach: yes
+     dns_servers:
+      - "{{ first_dns }}"
+      - "{{ second_dns }}"
+     exposed_ports: 
+       - 3000
+     ports:
+       - "{{ first_container_ports}}:{{ first_container_ports }}"
+     networks:
+       - name: "{{ network_name }}"
+
+ - name: Create Container Nginx
+   docker_container:
+    name: "{{ second_name_container }}"
+    image: "{{ second_name_container_image }}"
+    state: started
+    detach: yes
+    exposed_ports: 
+      - 80
+    dns_servers:
+      - "{{ first_dns }}"
+      - "{{ second_dns }}"
+    ports:
+      - "{{ second_container_ports}}:{{ second_container_ports }}"
+    volumes:
+      - "{{ src_folder_nginx }}:{{ dest_folder_nginx }}"
+    networks:
+      - name: "{{ network_name }}"
+  
+  
+    

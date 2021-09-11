@@ -1,0 +1,4 @@
+first_dns: 8.8.8.8
+second_dns: 8.8.4.4
+src_folder_nginx: ./conf.d
+dest_folder_nginx: /etc/nginx/conf.d/ 
