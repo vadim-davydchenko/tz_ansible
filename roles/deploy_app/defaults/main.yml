@@ -1,4 +1,6 @@
 first_dns: 8.8.8.8
 second_dns: 8.8.4.4
-src_folder_nginx: ./conf.d
-dest_folder_nginx: /etc/nginx/conf.d/ 
+src_folder_nginx: ./conf.d/
+dest_folder_nginx: /etc/nginx/conf.d/
+src_nginx_conf: /home/vadim/tz_ansible/roles/deploy_app/templates/default.conf
+dest_nginx_conf: /etc/nginx/conf.d/default.conf

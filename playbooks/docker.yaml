@@ -1,5 +1,5 @@
 - name: Preconfig
-  hosts: Test
+  hosts: Server
   tasks:
     - name: Install Docker
       block:

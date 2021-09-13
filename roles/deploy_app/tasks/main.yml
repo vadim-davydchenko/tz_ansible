@@ -42,6 +42,12 @@
       - "{{ src_folder_nginx }}:{{ dest_folder_nginx }}"
     networks:
       - name: "{{ network_name }}"
+
+ - name: copy default.conf to container
+   template:
+     dest: "{{ dest_nginx_conf }}"
+     src: "{{ src_nginx_conf }}"
+
   
   
     
