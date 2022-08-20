@@ -1,5 +1,5 @@
-Роль и playbook на поставку ПО:
-- создание сети *docker* с именем *example*
-- раскатка *grafana* в контейнере
-- раскатка *nginx* в контейнере с прокинутыми конфигом и `conf.d`
-- конфиг в `conf.d/` - слушает на 80м порту и `proxy_pass` на 3000й порт на контейнер графаны, по имени контейенра.
+Role и playbook for the delivery software:
+- create network *docker* with name *example*
+- deploy *grafana* in container
+- deploy *nginx* in a container with the config and directory *conf.d*
+- config in *conf.d/* - listens on the 80 port and `proxy_pass` on 3000 port on container *grafana* by the name of the container.
